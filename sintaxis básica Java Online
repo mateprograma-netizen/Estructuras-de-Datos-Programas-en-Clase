@@ -1,0 +1,52 @@
+// Programa básico
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner leer=new Scanner(System.in);
+        int valor=10, Valor=5, suma=0;
+        System.out.print("Ingrese el primer numero entero: ");
+        valor=leer.nextInt();
+        System.out.print("Ingrese el segundo numero entero: ");
+        Valor=leer.nextInt();
+        suma=valor+Valor;
+        System.out.print("La suma total es "+suma);
+    }
+}
+
+
+
+// Estructura condicional
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner leer=new Scanner(System.in);
+        int a=0, b=0;
+        System.out.print("Ingrese el primer numero entero: ");
+        a=leer.nextInt();
+        System.out.print("Ingrese el segundo numero entero: ");
+        b=leer.nextInt();
+        if(a==b){
+            System.out.print("Los numeros son iguales");
+        }else if(a<b){
+            System.out.print("El mayor es "+b);
+        }else{
+            System.out.print("El mayor es "+a);
+        }
+    }
+}
+
+
+
+// Ciclo For
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner leer=new Scanner(System.in);
+        int numero=0;
+        System.out.println("Ingrese un numero entero");
+        numero=leer.nextInt();
+        for(int x=0; x<12; x++){
+            System.out.println(x+" * "+numero+" = "+x*numero);
+        }
+    }
+}
