@@ -1,0 +1,90 @@
+// Coordenadas en Cuadrantes
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner leer=new Scanner(System.in);
+        int pc=0, sc=0, tc=0, cc=0, o=0, n=0, ej=0, x=0, y=0;
+        System.out.print("Ingrese la cantidad de coordenadas: ");
+        n=leer.nextInt();
+        for(int c=0; c<n; c++){
+            System.out.println("Ingrese la coordenada: "+(c+1));
+            System.out.println("En el eje x: ");
+            x=leer.nextInt();
+            System.out.println("En el eje y: ");
+            y=leer.nextInt();
+            if(x>0 && y>0){
+                pc++;
+            }else if(x<0 && y>0){
+                sc++;
+            }else if(x<0 && y<0){
+                tc++;
+            }else if(x>0 && y<0){
+                cc++;
+            }else if(x==0 && y==0){
+                o++;
+            }else{
+                ej++;
+            }
+        }
+        System.out.println("Numero de coordenadas en el primer cuadrante: "+pc);
+        System.out.println("Numero de coordenadas en el segundo cuadrante: "+sc);
+        System.out.println("Numero de coordenadas en el tercer cuadrante: "+tc);
+        System.out.println("Numero de coordenadas en el cuarto cuadrante: "+cc);
+        System.out.println("Numero de coordenadas en el origen: "+o);
+        System.out.println("Numero de coordenadas en los ejes: "+ej);
+    }
+}
+
+
+
+// Promedios y condicionalidad edades escolares
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner leer=new Scanner(System.in);
+        int man=3, tar=2, non=1, sum=0, sut=0, sun=0;
+        double prom=0, prot=0, pron=0;
+        for(int i=0; i<man; i++){
+            System.out.print("Digite edad del escolar "+(i+1)+" de la mañana: ");
+            int edad=leer.nextInt();
+            sum+=edad;
+            prom=sum/man;
+        }
+        for(int i=0; i<tar; i++){
+            System.out.print("Digite edad del escolar "+(i+1)+" de la tarde: ");
+            int edad=leer.nextInt();
+            sut+=edad;
+            prot=sut/tar;
+        }
+        for(int i=0; i<non; i++){
+            System.out.print("Digite edad del escolar "+(i+1)+" de la noche: ");
+            int edad=leer.nextInt();
+            sun+=edad;
+            pron=sun/non;
+        }
+        System.out.println("El promedio de los escolares de la mañana es: "+prom);
+        System.out.println("El promedio de los escolares de la tarde es: "+prot);
+        System.out.println("El promedio de los escolares de la noche es: "+pron);
+        if(prom>prot && prom>pron){
+            System.out.print("El promedio mayor es del escolar de la mañana igual a: "+prom);
+        }
+        if(prot>prom && prot>pron){
+            System.out.print("El promedio mayor es del escolar de la tarde igual a: "+prot);
+        }
+        if(pron>prom && pron>prot){
+            System.out.print("El promedio mayor es del escolar de la noche igual a: "+pron);
+        }
+        if(prom==prot){
+            System.out.print("Promedios maximos e iguales en los escolares de la mañana "+prom+" y tarde: "+prot);
+        }
+        if(prom==pron){
+            System.out.print("Promedios maximos e iguales en los escolares de la mañana "+prom+" y noche: "+pron);
+        }
+        if(prot==pron){
+            System.out.print("Promedios maximos e iguales en los escolares de la tarde "+prot+" y noche: "+pron);
+        }
+        if(prom==prot && prot==pron){
+            System.out.print("Promedios maximos e iguales en los escolares de la mañana "+prom+",tarde "+prot+" y noche: "+pron);
+        }
+    }
+}
