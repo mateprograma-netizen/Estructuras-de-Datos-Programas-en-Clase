@@ -1,0 +1,80 @@
+// Strings con espacio
+import java.util.Scanner;
+class Main {
+    String nombre, nombre1;
+    public void comparar(){
+        Scanner leer=new Scanner(System.in);
+        System.out.println("Ingrese el primer nombre: ");
+        nombre=leer.next();
+        System.out.println("Ingrese el segundo nombre: ");
+        nombre1=leer.next();
+    }
+    public void resultado(){
+        if(nombre.equals(nombre1)){
+            System.out.println("Nombres iguales");
+        }else if(nombre.equalsIgnoreCase(nombre1)){
+            System.out.println("Nombres iguales");
+        }else{
+            System.out.println("Nombres diferentes");
+        }
+        System.out.println("Cantidad de caracteres del primer nombre: "+nombre.length());
+        System.out.println("Cantidad de caracteres del segundo nombre: "+nombre1.length());
+        // mym
+        System.out.println(nombre.toUpperCase());
+        System.out.println(nombre1.toUpperCase());
+        System.out.println(nombre.toLowerCase());
+        System.out.println(nombre1.toLowerCase());
+        System.out.println(nombre.indexOf("a"));
+        System.out.println(nombre1.indexOf("a")); // Indica posicion donde se encuentra el caracter "a", puede ser cualquier caracter del alfabeto
+    }
+    public static void main(String[] args) {
+        System.out.println("Comparar: ");
+        Main comp=new Main();
+        comp.comparar();
+        comp.resultado();
+    }
+}
+
+
+
+// Vectores
+import java.util.Scanner;
+class Main {
+    Scanner leer;
+    float[] estaturas;
+    float promedio;
+    public void Inicio(){
+        leer=new Scanner(System.in);
+        estaturas=new float[4];
+        for(int x=0; x<4; x++){
+            System.out.print("Ingrese la estatura "+(1+x)+": ");
+            estaturas[x]=leer.nextFloat();
+        }
+    }
+    public void obtener_promedio(){
+        float suma=0;
+        for(int x=0; x<4; x++){
+            suma+=estaturas[x];
+        }
+        promedio=suma/4;
+        System.out.println("El promedio es "+promedio);
+    }
+    public void mym(){
+        int mayor=0, menor=0;
+        for(int x=0; x<4; x++){
+            if(estaturas[x]>promedio){
+                mayor+=1;
+            }else{
+                menor+=1;
+            }
+        }
+        System.out.println("Se calculan "+mayor+" estaturas por encima del promedio");
+        System.out.println("Se calculan "+menor+" estaturas por debajo del promedio");
+    }
+    public static void main(String[] args) {
+        Main escolar=new Main();
+        escolar.Inicio();
+        escolar.obtener_promedio();
+        escolar.mym();
+    }
+}
