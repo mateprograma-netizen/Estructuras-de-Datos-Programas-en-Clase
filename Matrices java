@@ -1,0 +1,155 @@
+// Matriz
+import java.util.Scanner;
+class Main {
+    Scanner leer;
+    int[][] matriz;
+    int tam=0;
+    public void cargar_matriz(){
+        Scanner leer=new Scanner(System.in);
+        System.out.print("Ingrese el tamaño de la matriz: ");
+        tam=leer.nextInt();
+        matriz=new int[tam][tam];
+        for(int f=0; f<tam; f++){
+            for(int c=0; c<tam; c++){
+                System.out.print("Ingrese el valor: ");
+                matriz[f][c]=leer.nextInt();
+            }
+        }
+    }
+    public void imprimir_matriz(){
+        System.out.println("Matriz: ");
+        for(int f=0; f<tam; f++){
+            for(int c=0; c<tam; c++){
+                System.out.print(" "+matriz[f][c]);
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String[] args) {
+        Main matrices=new Main();
+        matrices.cargar_matriz();
+        matrices.imprimir_matriz();
+    }
+}
+
+
+
+// Matriz diagonal
+import java.util.Scanner;
+class Main {
+    Scanner leer;
+    int[][] matriz;
+    int tam=0, mitad=0;
+    public void cargar_matriz(){
+        Scanner leer=new Scanner(System.in);
+        System.out.print("Ingrese el tamaño de la matriz: ");
+        tam=leer.nextInt();
+        matriz=new int[tam][tam];
+        for(int f=0; f<tam; f++){
+            for(int c=0; c<tam; c++){
+                System.out.print("Ingrese el valor: ");
+                matriz[f][c]=leer.nextInt();
+            }
+        }
+    }
+    public void imprimir_diagonal(){
+        System.out.println("Matriz cruz: ");
+        mitad=tam/2;
+        for(int f=0; f<tam; f++){
+            for(int c=0; c<tam; c++){
+                if(f==c){
+                    System.out.print(" "+matriz[f][c]);
+                }else{
+                    System.out.print(" 0");
+                }
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String[] args) {
+        Main matrices=new Main();
+        matrices.cargar_matriz();
+        matrices.imprimir_diagonal();
+    }
+}
+
+
+
+// Matriz cruz
+import java.util.Scanner;
+class Main {
+    Scanner leer;
+    int[][] matriz;
+    int tam=0, mitad=0;
+    public void cargar_matriz(){
+        Scanner leer=new Scanner(System.in);
+        System.out.print("Ingrese el tamaño de la matriz: ");
+        tam=leer.nextInt();
+        matriz=new int[tam][tam];
+        for(int f=0; f<tam; f++){
+            for(int c=0; c<tam; c++){
+                System.out.print("Ingrese el valor: ");
+                matriz[f][c]=leer.nextInt();
+            }
+        }
+    }
+    public void imprimir_cruz(){
+        System.out.println("Matriz cruz: ");
+        mitad=tam/2;
+        for(int f=0; f<tam; f++){
+            for(int c=0; c<tam; c++){
+                if(f==mitad || c==mitad){
+                    System.out.print(" "+matriz[f][c]);
+                }else{
+                    System.out.print(" 0");
+                }
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String[] args) {
+        Main matrices=new Main();
+        matrices.cargar_matriz();
+        matrices.imprimir_cruz();
+    }
+}
+
+
+
+// Matriz con valores en las esquinas
+import java.util.Scanner;
+class Main {
+    Scanner leer;
+    int[][] matriz;
+    int tam=0, mitad=0;
+    public void cargar_matriz(){
+        Scanner leer=new Scanner(System.in);
+        System.out.print("Ingrese el tamaño de la matriz: ");
+        tam=leer.nextInt();
+        matriz=new int[tam][tam];
+        for(int f=0; f<tam; f++){
+            for(int c=0; c<tam; c++){
+                System.out.print("Ingrese el valor: ");
+                matriz[f][c]=leer.nextInt();
+            }
+        }
+    }
+    public void imprimir_esquinas(){
+        System.out.println("Matriz con valores en las esquinas: ");
+        for(int f=0; f<tam; f++){
+            for(int c=0; c<tam; c++){
+                if((f==0||f==tam-1) && (c==0||c==tam-1)){
+                    System.out.print(" "+matriz[f][c]);
+                }else{
+                    System.out.print(" 0");
+                }
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String[] args) {
+        Main matrices=new Main();
+        matrices.cargar_matriz();
+        matrices.imprimir_esquinas();
+    }
+}
