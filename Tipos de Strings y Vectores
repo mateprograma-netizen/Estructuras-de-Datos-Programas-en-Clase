@@ -104,3 +104,35 @@ class Main {
         esc.Inicio();
     }
 }
+
+
+
+// Vectores en Ordenamiento
+import java.util.Scanner;
+class Main {
+    Scanner leer;
+    int ord;
+    int[] vector={81, 4, 19, 2, 50};
+    public void ordenamiento(){
+        for(int i=0; i<vector.length-1; i++){
+            for(int j=0; j<vector.length-1-i; j++){
+                if(vector[j]>vector[j+1]){
+                    ord=vector[j];
+                    vector[j]=vector[j+1];
+                    vector[j+1]=ord;
+                }
+            }
+        }
+    }
+    public void imprimir(){
+        System.out.println("Vector ordenado: ");
+        for(int k : vector){
+            System.out.println(k+" ");
+        }
+    }
+    public static void main(String[] args) {
+        Main vt=new Main();
+        vt.ordenamiento();
+        vt.imprimir();
+    }
+}
