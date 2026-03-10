@@ -1,12 +1,9 @@
-// taller Contraseñas
+// Correccion Taller Contraseñas
 import java.util.Scanner;
-
 class Main {
-
     int n=0, cf=0, cm=0, cd=0;
-    String[] passwords;
+    String passwords;
     Scanner leer;
-
     public void cantidad_password(){
         leer=new Scanner(System.in);
         System.out.print("Ingrese el numero de contraseñas: ");
@@ -14,67 +11,59 @@ class Main {
         leer.nextLine();
         System.out.println("La contraseña debe tener al menos 8 caracteres, una letra mayuscula, una letra minuscula y un numero");
     }
-    public void pedir_password(){
-        passwords=new String[n];
-        for(int i=0; i<n; i++){
-            System.out.print("Ingrese la contraseña "+(i+1)+": ");
-            passwords[i]=leer.nextLine();
-        }
-    }
-
     public void criterios_password(){
-
-        for(int c=0;c<n;c++){
-
-            int crit=0;
-            int mayus=0, minus=0, num=0;
-
-            if(passwords[c].length()>=8){
-                crit++;
+        for(int i=0; i<n; i++) {
+            System.out.println("Ingrese la contraseña "+(i+1)+": ");
+            passwords=leer.nextLine();
+            int critc= 0;
+            if (passwords.length() >= 8){
+                critc++;
             }
-
-            for(int i=0; i<passwords[c].length();i++){
-
-                char m=passwords[c].charAt(i);
-
-                if(Character.isUpperCase(m)){
-                    mayus=1;
-                }
-
-                if(Character.isLowerCase(m)){
-                    minus=1;
-                }
-
-                if(Character.isDigit(m)){
-                    num=1;
+            int mayuscula=0;
+            int minuscula=0;
+            int numero=0;
+            for(int j=0; j<passwords.length(); j++) {
+                char m=passwords.charAt(j);
+                if (Character.isUpperCase(m)) {
+                    mayuscula++;
+                }else if (Character.isLowerCase(m)) {
+                    minuscula++;
+                }else if (Character.isDigit(m)) {
+                    numero++;
                 }
             }
-            crit=crit+mayus+minus+num;
-            if(crit==4){
+            if(mayuscula>0){
+                critc++;
+            }
+            if(minuscula>0){
+                critc++;
+            }
+            if(numero>0){
+                critc++;
+            }
+            if(critc==4){
+                System.out.println("Contraseña Fuerte");
                 cf++;
-            }
-            else if(crit==3){
+            }else if(critc==3){
+                System.out.println("Contraseña Media");
                 cm++;
-            }
-            else if(crit==2){
+            }else{
+                System.out.println("Contraseña Debil");
                 cd++;
             }
         }
     }
-
     public void imprimir_criterios(){
+        System.out.println(" ");
         System.out.println("Contraseñas fuertes: "+cf);
         System.out.println("Contraseñas medias: "+cm);
         System.out.println("Contraseñas debiles: "+cd);
     }
-
     public static void main(String[] args){
-
-        Main pass=new Main();
-
-        pass.cantidad_password();
-        pass.pedir_password();
-        pass.criterios_password();
-        pass.imprimir_criterios();
+        Main cts=new Main();
+        cts.cantidad_password();
+        cts.criterios_password();
+        cts.imprimir_criterios();
     }
 }
+
