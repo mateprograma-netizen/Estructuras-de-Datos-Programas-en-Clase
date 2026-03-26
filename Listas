@@ -1,0 +1,30 @@
+// Listas en Pila
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Estructura Lista");
+        // Crear una lista
+        List<String> lista=new ArrayList<>();
+        // Agregar elemento a la lista
+        lista.add("Leonardo");
+        lista.add("Walter");
+        lista.add("Mariana");
+        lista.add("Sofia");
+        System.out.println("Lista completa: "+lista);
+        // Actualizar lista
+        lista.set(1, "Walter Chaves"); // Subindice, objeto actualizacion
+        System.out.println("Lista actualizada: "+lista);
+        // Eliminar elemento de la lista
+        lista.remove("Leonardo");
+        System.out.println("Lista actualizada: "+lista);
+        // Eliminar por indice
+        lista.remove(2);
+        System.out.println("Lista actualizada: "+lista);
+        // Verificar si un dato existe en la lista
+        if(lista.contains("Mariana")){
+            System.out.println("El elemento existe en la lista");
+        }else{
+            System.out.println("El elemento NO existe en la lista");
+        }
+    }
+}
