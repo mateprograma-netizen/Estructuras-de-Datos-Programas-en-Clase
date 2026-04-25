@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejemplo Input</title>
+</head>
+<body>
+
+    <h2>Correo:</h2>
+
+    <input type="text" id="miInput" placeholder="Escribe aquí">
+
+    <button onclick="guardarTexto()">Guardar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function guardarTexto() {
+            let texto = document.getElementById("miInput").value;
+            document.getElementById("resultado").innerText = texto;
+        }
+    </script>
+
+</body>
+</html>
